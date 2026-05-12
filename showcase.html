@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华服雅韵 - 全景橱窗</title>
+    <link rel="stylesheet" href="static/css/traditional.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        .showcase-wrapper {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        #showcase-canvas {
+            position: absolute;
+            inset: 0;
+        }
+
+        .showcase-hud {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .showcase-hud > * {
+            pointer-events: auto;
+        }
+
+        .hud-glass {
+            background: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            border-radius: 12px;
+        }
+
+        .clothing-info {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            padding: 2rem;
+            min-width: 260px;
+            text-align: center;
+        }
+
+        .clothing-name {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--china-gold);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .clothing-dynasty {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .clothing-desc {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            max-width: 280px;
+            word-wrap: break-word;
+        }
+
+        .clothing-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(218, 165, 32, 0.1);
+            border: 2px solid var(--china-gold);
+            color: var(--china-gold);
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: var(--china-gold);
+            color: var(--china-ink);
+            transform: scale(1.1);
+        }
+
+        .nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        .camera-corners {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .corner-frame {
+            width: 280px;
+            height: 210px;
+            border: 2px solid rgba(218, 165, 32, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .corner-frame video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scaleX(-1);
+        }
+
+        #skeleton-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            transform: scaleX(-1);
+            pointer-events: none;
+        }
+
+        .corner-label {
+            font-size: 0.625rem;
+            color: var(--color-text-muted);
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .gesture-hint {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.75rem 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .gesture-hint span {
+            color: var(--china-gold);
+            margin: 0 0.25rem;
+        }
+
+        .loading-3d {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .loading-ring {
+            width: 80px;
+            height: 80px;
+            border: 3px solid rgba(218, 165, 32, 0.2);
+            border-top-color: var(--china-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-family: var(--font-display);
+            color: var(--color-text-muted);
+            letter-spacing: 0.2em;
+        }
+
+        .item-dots {
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+        }
+
+        .item-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(218, 165, 32, 0.3);
+            border: 1px solid var(--china-gold);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .item-dot.active {
+            background: var(--china-gold);
+            transform: scale(1.3);
+        }
+
+        .item-dot:hover:not(.active) {
+            background: rgba(218, 165, 32, 0.5);
+        }
+
+        .debug-panel {
+            position: absolute;
+            top: 80px;
+            left: 24px;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(218, 165, 32, 0.5);
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #aaa;
+            min-width: 220px;
+            z-index: 200;
+        }
+        .debug-panel .label { color: var(--china-gold); margin-bottom: 0.5rem; }
+        .debug-row { display: flex; justify-content: space-between; margin: 0.25rem 0; }
+        .debug-row .key { color: var(--color-text-muted); }
+        .debug-row .value { color: #2ecc71; font-weight: bold; }
+        .debug-row .value.inactive { color: #e74c3c; }
+
+            </style>
+</head>
+<body>
+    <div id="showcase-page" class="showcase-wrapper">
+        <div id="showcase-canvas"></div>
+
+        <div class="showcase-hud">
+            <div class="item-dots" id="item-dots"></div>
+
+            <div class="hud-glass clothing-info" id="clothing-info">
+                <div class="clothing-name" id="clothing-name">汉服</div>
+                <div class="clothing-dynasty" id="clothing-dynasty">秦汉时期</div>
+                <div class="clothing-desc" id="clothing-desc">宽袖博带，交领右衽</div>
+                <div class="clothing-nav">
+                    <button class="nav-btn" id="prev-btn">&#8592;</button>
+                    <button class="nav-btn" id="next-btn">&#8594;</button>
+                </div>
+            </div>
+
+            <div class="gesture-hint">
+                手势：<span>单手抬高</span>左右滑动旋转 | <span>双手向外展开</span>确认选择
+            </div>
+
+            <div class="debug-panel" id="debug-panel">
+                <div class="label">手势检测数据</div>
+                <div class="debug-row"><span class="key">当前角度:</span><span id="dbg-rotation" class="value">--</span></div>
+                <div class="debug-row"><span class="key">当前索引:</span><span id="dbg-current-index" class="value">--</span></div>
+                <div class="debug-row"><span class="key">左手X:</span><span id="dbg-left-x" class="value">--</span></div>
+                <div class="debug-row"><span class="key">左手Y:</span><span id="dbg-left-y" class="value">--</span></div>
+                <div class="debug-row"><span class="key">右手X:</span><span id="dbg-right-x" class="value">--</span></div>
+                <div class="debug-row"><span class="key">右手Y:</span><span id="dbg-right-y" class="value">--</span></div>
+                <div class="debug-row"><span class="key">左手抬起:</span><span id="dbg-left-raised" class="value">--</span></div>
+                <div class="debug-row"><span class="key">右手抬起:</span><span id="dbg-right-raised" class="value">--</span></div>
+                <div class="debug-row"><span class="key">滑动方向:</span><span id="dbg-swipe-dir" class="value">--</span></div>
+                <div class="debug-row"><span class="key">速度:</span><span id="dbg-velocity" class="value">--</span></div>
+            </div>
+
+            <div class="camera-corners">
+                <div class="corner-frame">
+                    <video id="camera-video" autoplay playsinline muted></video>
+                    <canvas id="skeleton-canvas"></canvas>
+                </div>
+                <div class="corner-label">摄像头预览 + 骨架检测</div>
+            </div>
+        </div>
+
+        <div id="loading-3d" class="loading-3d">
+            <div class="loading-ring"></div>
+            <div class="loading-text">加载中...</div>
+        </div>
+    </div>
+
+    <div id="transition-overlay" class="transition-overlay">
+        <div class="transition-pattern"></div>
+    </div>
+
+    <script src="static/js/hand_tracker.js"></script>
+    <script src="static/js/showcase.js"></script>
+</body>
+</html>

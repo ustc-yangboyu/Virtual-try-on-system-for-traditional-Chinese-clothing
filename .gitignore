@@ -1,0 +1,30 @@
+# Environment
+.env
+
+# SSL Certificates
+cert.pem
+key.pem
+
+# Logs
+*.log
+server.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.db
+
+# Data
+data/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+dist/

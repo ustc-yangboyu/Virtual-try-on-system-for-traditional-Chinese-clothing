@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华服雅韵 - 服饰介绍</title>
+    <link rel="stylesheet" href="static/css/traditional.css">
+    <style>
+        .clothing-selector {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+        .clothing-tab {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(218, 165, 32, 0.2);
+            border-radius: 20px;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+        .clothing-tab:hover {
+            border-color: rgba(218, 165, 32, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .clothing-tab.active {
+            border-color: var(--china-gold);
+            background: rgba(218, 165, 32, 0.15);
+            color: var(--china-gold);
+        }
+    </style>
+</head>
+<body>
+    <div id="intro-page" class="page-container">
+        <div class="intro-layout">
+            <div class="intro-left">
+                <div class="content-card" id="intro-card">
+                    <div class="card-header">
+                        <h1 id="clothing-title" class="card-title">加载中...</h1>
+                        <p id="clothing-dynasty" class="card-subtitle"></p>
+                    </div>
+
+                    <div class="clothing-selector" id="clothing-selector">
+                    </div>
+
+                    <div class="card-content">
+                        <p id="clothing-description" class="card-text">
+                        </p>
+                        <div id="clothing-details" class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-label">主要特征</span>
+                                <span id="feature-1" class="feature-value">-</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">袖型</span>
+                                <span id="feature-2" class="feature-value">-</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">色彩</span>
+                                <span id="feature-3" class="feature-value">-</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-label">场合</span>
+                                <span id="feature-4" class="feature-value">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div style="text-align: center; width: 100%;">
+                            <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">
+                                手势操作：向上滑动开始答题，或点击下方按钮
+                            </p>
+                            <button id="start-quiz-btn" class="control-button" style="margin-top: 1rem;">
+                                开始答题
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-right">
+                <div class="camera-preview" id="camera-container">
+                    <video id="camera-video" autoplay playsinline muted></video>
+                    <div class="camera-label">摄像头预览</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gesture-indicator" class="gesture-indicator"></div>
+    </div>
+
+    <div id="transition-overlay" class="transition-overlay">
+        <div class="transition-pattern"></div>
+    </div>
+
+    <script src="static/js/hand_tracker.js"></script>
+    <script src="static/js/intro.js"></script>
+</body>
+</html>

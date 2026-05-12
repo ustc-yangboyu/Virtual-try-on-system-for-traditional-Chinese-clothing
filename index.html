@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华服雅韵 - 中国传统服饰互动体验</title>
+    <link rel="stylesheet" href="static/css/traditional.css">
+</head>
+<body>
+    <div id="entry-screen" class="entry-screen">
+        <div class="entry-background">
+            <div class="pattern-overlay"></div>
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+        </div>
+
+        <div class="entry-content">
+            <div class="title-wrapper">
+                <h1 class="main-title">
+                    <span class="title-cn">华服雅韵</span>
+                    <span class="title-en">Traditional Chinese Clothing</span>
+                </h1>
+                <div class="title-decoration">
+                    <svg class="dragon-pattern" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 30 Q50 10 100 30 Q150 50 190 30" stroke="currentColor" fill="none" stroke-width="2"/>
+                        <circle cx="100" cy="30" r="8" fill="currentColor"/>
+                        <path d="M85 30 L95 25 L95 35 Z" fill="currentColor"/>
+                        <path d="M115 30 L105 25 L105 35 Z" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+
+            <p class="entry-subtitle">探索中华传统服饰之美<br>通过手势与姿态开启沉浸式体验</p>
+
+            <button id="enter-btn" class="enter-button">
+                <span class="btn-text">进入体验</span>
+                <span class="btn-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="btn-glow"></div>
+            </button>
+
+            <div class="entry-features">
+                <div class="feature-item">
+                    <span class="feature-icon">&#128400;</span>
+                    <span class="feature-text">手势控制</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">&#127917;</span>
+                    <span class="feature-text">姿态互动</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">&#128702;</span>
+                    <span class="feature-text">虚拟试穿</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+        </div>
+    </div>
+
+    <div id="transition-overlay" class="transition-overlay">
+        <div class="transition-pattern"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const enterBtn = document.getElementById('enter-btn');
+            const entryScreen = document.getElementById('entry-screen');
+            const transitionOverlay = document.getElementById('transition-overlay');
+
+            enterBtn.addEventListener('click', async () => {
+                enterBtn.classList.add('clicked');
+                transitionOverlay.classList.add('active');
+
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                window.location.href = 'showcase.html';
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                const orbs = document.querySelectorAll('.glow-orb');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+
+                orbs.forEach((orb, index) => {
+                    const speed = (index + 1) * 20;
+                    orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
