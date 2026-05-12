@@ -89,16 +89,27 @@ ARK_API_KEY=your_api_key_here
 ### 3. 启动服务器
 
 ```bash
+# HTTP 模式（开发用）
 python -m src.server
 # 或
 uvicorn src.server:app --host 127.0.0.1 --port 8000
+
+# HTTPS 模式（生产环境推荐）
+uvicorn src.server:app --host 0.0.0.0 --port 8000 \
+    --ssl-keyfile key.pem --ssl-certfile cert.pem
 ```
 
 ### 4. 访问应用
 
-```
+```bash
+# HTTP
 http://127.0.0.1:8000/
+
+# HTTPS（推荐）
+https://127.0.0.1:8000/
 ```
+
+> 注意：首次访问 HTTPS 时，浏览器会提示证书不受信任，需手动允许。
 
 ## API 端点
 
