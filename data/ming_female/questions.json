@@ -1,0 +1,71 @@
+{
+  "clothing_id": "ming_female",
+  "clothing_name": "明制汉服(女)",
+  "clothing_name_en": "Ming-style Hanfu",
+  "dynasty": "明朝",
+  "prompt": "Ming Dynasty Hanfu, traditional Chinese formal attire from Ming era. Standing collar (lishi ling), right-over-left overlapping front (jiaoling youren), with wide long sleeves and a front sash or metal button closures. For men: round collar or cross-collar robe with horse-face skirt underneath; for women: long flowing robe with pleated horse-face skirt (mamianqun) and decorative cloud shoulder accessories (yunjian). Fitted yet flowing silhouette, elegant and dignified, in deep red (chi), indigo, dark green, ivory white, or black. Silk, brocade, or satin fabric with subtle cloud or floral patterns. Please preserve the person's original face and body shape accurately. Professional studio lighting, formal dignified pose, centered composition.",
+  "description": "明制汉服是明代形成的中国传统服饰，继承唐宋衣冠制度并发展出自身规制。立领、大襟右衽、马面裙为其典型特征，结构严谨，端庄华美，是明代重要的正式礼服。",
+  "features": ["立领右衽", "宽口收袖", "浓沉雅正", "礼宴大节"],
+  "questions": [
+    {
+      "id": 1,
+      "question": "明制汉服兴起的首要背景是？",
+      "options": [
+        "A. 全盘继承唐代服饰",
+        "B. 推翻元代、复兴汉家衣冠礼制",
+        "C. 完全照搬宋代形制",
+        "D. 受西域文化深度影响"
+      ],
+      "correct": 1,
+      "explanation": "明朝推翻元朝统治后，全面复兴汉族传统服饰，重新完善汉服衣冠礼制。"
+    },
+    {
+      "id": 2,
+      "question": "不属于明制经典形制的是？",
+      "options": [
+        "A. 马面裙",
+        "B. 立领袄",
+        "C. 比甲",
+        "D. 曲裾"
+      ],
+      "correct": 3,
+      "explanation": "曲裾是周制、秦汉形制，明代已不再主流使用，不属于明制汉服。"
+    },
+    {
+      "id": 3,
+      "question": "明制汉服整体版型特点是？",
+      "options": [
+        "A. 宽松无型、随性飘逸",
+        "B. 版型挺括、层次分明、结构规整",
+        "C. 极简单层、无多余装饰",
+        "D. 贴身露肤、轻盈单薄"
+      ],
+      "correct": 1,
+      "explanation": "明制汉服剪裁工整、版型挺括，穿搭层次丰富，礼制规范，端庄大气。"
+    },
+    {
+      "id": 4,
+      "question": "明代马面裙最突出的文化寓意是？",
+      "options": [
+        "A. 自由奔放、无礼教约束",
+        "B. 端庄守礼、门第大家风范",
+        "C. 文人避世隐逸",
+        "D. 祭祀专用通灵象征"
+      ],
+      "correct": 1,
+      "explanation": "马面裙是明代女性核心服饰，形制规整、纹样考究，象征端庄守礼，是世家闺秀的标志性穿搭。"
+    },
+    {
+      "id": 5,
+      "question": "明制服饰相较于宋制最大区别是？",
+      "options": [
+        "A. 更简约素净",
+        "B. 完全照搬宋代审美",
+        "C. 礼制更完备、款式更华丽规整，兼顾官宦与市井",
+        "D. 只适合日常不适合礼仪"
+      ],
+      "correct": 2,
+      "explanation": "明制汉服完善了历代汉服礼制，款式华丽规整，既有正式礼服，也有亲民的日常款式，适用场景远超宋制。"
+    }
+  ]
+}

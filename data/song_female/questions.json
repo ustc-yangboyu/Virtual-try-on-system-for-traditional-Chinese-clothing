@@ -1,0 +1,71 @@
+{
+  "clothing_id": "song_female",
+  "clothing_name": "宋制汉服(女)",
+  "clothing_name_en": "Song-style Hanfu",
+  "dynasty": "宋朝",
+  "prompt": "Song Dynasty Hanfu, traditional Chinese attire from the Song era. Straight-cut beizi (long open-front coat) with parallel collar, no buttons, side slits starting below the waist. Inner garment is a short jacket with narrow cuffed sleeves, worn with a high-waisted pleated skirt (baidiequn). Loose yet lean silhouette, elongating the figure, in muted tones such as jade green, pale blue, lotus pink, ivory white, or charcoal grey. Lightweight silk or linen-blend fabric with subtle grass or floral patterns. Please preserve the person's original face and body shape accurately. Professional studio lighting, formal dignified pose, centered composition.",
+  "description": "宋制汉服是宋代形成的中国传统服饰，继承了晚唐五代遗风并发展出自身特色。直领对襟、长褙子、百迭裙为其典型特征，修长清雅，是宋代文人日常与雅集的重要着装。",
+  "features": ["直领对襟", "窄袖修长", "清雅淡泊", "文人雅集"],
+  "questions": [
+    {
+      "id": 1,
+      "question": "宋制汉服背后主导的核心思想是？",
+      "options": [
+        "A. 盛唐豪放风气",
+        "B. 程朱理学、文人清雅风骨",
+        "C. 宗法礼乐制度",
+        "D. 游牧文化融合"
+      ],
+      "correct": 1,
+      "explanation": "宋代程朱理学盛行，推崇内敛克制、清雅简约，直接塑造了宋制汉服的审美内核。"
+    },
+    {
+      "id": 2,
+      "question": "以下哪一个是宋制标志性服饰？",
+      "options": [
+        "A. 曳撒",
+        "B. 褙子",
+        "C. 曲裾",
+        "D. 齐胸襦裙"
+      ],
+      "correct": 1,
+      "explanation": "褙子是宋代男女通用、最具代表性的标志性服饰，贯穿宋代全时期。"
+    },
+    {
+      "id": 3,
+      "question": "宋制汉服整体审美追求是？",
+      "options": [
+        "A. 富丽堂皇、浓妆艳服",
+        "B. 简约素雅、清冷书卷气",
+        "C. 华丽繁复、奔放张扬",
+        "D. 版型厚重、端庄肃穆"
+      ],
+      "correct": 1,
+      "explanation": "宋代崇尚文人风骨，摒弃华丽浮夸，追求极简素雅、温润清冷的书卷气质。"
+    },
+    {
+      "id": 4,
+      "question": "宋代服饰色彩大多偏向？",
+      "options": [
+        "A. 大红大紫高对比",
+        "B. 金翠华丽多镶边",
+        "C. 浅淡素色、低饱和清雅调",
+        "D. 深色玄黑为主"
+      ],
+      "correct": 2,
+      "explanation": "宋代服饰以低饱和浅素色为主，拒绝浓艳夸张，符合清雅内敛的时代审美。"
+    },
+    {
+      "id": 5,
+      "question": "宋制穿搭盛行的社会氛围是？",
+      "options": [
+        "A. 宫廷奢靡享乐",
+        "B. 文人治国、市井雅致生活",
+        "C. 战乱保守封闭",
+        "D. 对外交流异域风"
+      ],
+      "correct": 1,
+      "explanation": "宋代重文轻武，文人阶层主导社会审美，市井文化发达，崇尚雅致克制的生活方式。"
+    }
+  ]
+}

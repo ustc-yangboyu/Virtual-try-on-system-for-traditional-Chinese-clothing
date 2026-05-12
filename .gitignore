@@ -14,8 +14,8 @@ __pycache__/
 *.py[cod]
 *.db
 
-# Data
-data/
+# Data - managed separately
+# data/
 
 # IDE
 .vscode/

@@ -1,0 +1,71 @@
+{
+  "clothing_id": "tang_female",
+  "clothing_name": "唐制汉服(女)",
+  "clothing_name_en": "Tang-style Hanfu",
+  "dynasty": "唐朝",
+  "prompt": "Tang Dynasty Hanfu, traditional Chinese attire from the Tang era. Chest-high wrap skirt (qixiong ruqun) with narrow short jacket, wide-sleeved sheer outer coat. Flowing and opulent silhouette in ruby red, saffron yellow, or sapphire blue. Lightweight silk or gauze fabric with subtle floral patterns. Please preserve the person's original face and body shape accurately. Professional studio lighting, formal dignified pose, centered composition.",
+  "description": "唐制汉服是唐代形成的中国传统服饰，继承隋制并融合多民族文化特色。齐胸襦裙、窄袖短衫、大袖衫为其典型特征，飘逸华美，是唐代贵族女子日常与宴乐的重要着装。",
+  "features": ["齐胸襦裙", "大袖飘逸", "浓艳华丽", "宴乐游赏"],
+  "questions": [
+    {
+      "id": 1,
+      "question": "唐制汉服盛行的核心时代背景是？",
+      "options": [
+        "A. 理学盛行内敛克制",
+        "B. 盛唐开放包容、万国来朝",
+        "C. 衣冠复古礼制收紧",
+        "D. 民间市井简约实用"
+      ],
+      "correct": 1,
+      "explanation": "唐朝国力强盛、丝绸之路繁荣，社会风气开放包容，造就了华丽奔放的唐制服饰。"
+    },
+    {
+      "id": 2,
+      "question": "不属于唐制经典形制的是？",
+      "options": [
+        "A. 齐胸襦裙",
+        "B. 坦领襦裙",
+        "C. 诃子裙",
+        "D. 马面裙"
+      ],
+      "correct": 3,
+      "explanation": "马面裙是明代标志性服饰，不属于唐代形制。"
+    },
+    {
+      "id": 3,
+      "question": "唐代服饰纹样最常见的是？",
+      "options": [
+        "A. 梅兰竹菊素雅纹",
+        "B. 牡丹、卷草、宝相花",
+        "C. 几何极简暗纹",
+        "D. 山水水墨纹样"
+      ],
+      "correct": 1,
+      "explanation": "牡丹象征盛世繁华，卷草、宝相花融合西域风格，是唐代最具代表性的服饰纹样。"
+    },
+    {
+      "id": 4,
+      "question": "唐制女性服饰风格体现了唐代怎样的社会风气？",
+      "options": [
+        "A. 保守拘谨、尊卑森严",
+        "B. 开放自信、雍容大气",
+        "C. 低调内敛、含蓄清雅",
+        "D. 严苛礼教、束缚刻板"
+      ],
+      "correct": 1,
+      "explanation": "唐代女性地位较高，服饰袒领、飘逸，展现出开放自信、雍容华贵的社会风气。"
+    },
+    {
+      "id": 5,
+      "question": "唐代圆领袍主要受众人群是？",
+      "options": [
+        "A. 仅宫廷后妃",
+        "B. 士人、官员、贵族男女皆可穿",
+        "C. 仅限民间平民",
+        "D. 仅道士僧人"
+      ],
+      "correct": 1,
+      "explanation": "圆领袍是唐代通用常服，上至皇室官员，下至贵族男女，均可穿着。"
+    }
+  ]
+}

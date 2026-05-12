@@ -1,0 +1,71 @@
+{
+  "clothing_id": "zhou_female",
+  "clothing_name": "周制汉服(女)",
+  "clothing_name_en": "Zhou-style Hanfu",
+  "dynasty": "周朝",
+  "prompt": "Zhou Dynasty Hanfu, traditional Chinese attire from the Zhou era. Cross-collar wrapping robe (quju) with wide sleeves, body-wrapping lower hem. Solemn silhouette in black, deep indigo, or dark brown. Heavy silk or hemp fabric with subtle geometric patterns. Please preserve the person's original face and body shape accurately. Professional studio lighting, formal dignified pose, centered composition.",
+  "description": "周制汉服是周代形成的中国传统服饰，奠定了汉服交领右衽、宽袍系带的基本形制。曲裾深衣为其典型特征，庄重古朴，是先秦时期礼仪祭祀与贵族朝会的重要礼服。",
+  "features": ["交领右衽", "宽袖垂拱", "玄黑纁红", "礼仪祭祀"],
+  "questions": [
+    {
+      "id": 1,
+      "question": "周制汉服核心依托的文化制度是？",
+      "options": [
+        "A. 市井商贸文化",
+        "B. 礼乐宗法制度",
+        "C. 文人理学思想",
+        "D. 对外丝路文化"
+      ],
+      "correct": 1,
+      "explanation": "周制汉服诞生于周代礼乐制度，服饰是宗法等级、礼仪规范的核心载体。"
+    },
+    {
+      "id": 2,
+      "question": "以下哪款是周制汉服经典代表形制？",
+      "options": [
+        "A. 马面裙",
+        "B. 曲裾深衣",
+        "C. 齐胸襦裙",
+        "D. 褙子"
+      ],
+      "correct": 1,
+      "explanation": "曲裾深衣是先秦、秦汉时期最具代表性的周制汉服形制。"
+    },
+    {
+      "id": 3,
+      "question": "周制汉服整体配色风格特点是？",
+      "options": [
+        "A. 浓艳华丽高饱和",
+        "B. 素雅沉稳、色调庄重",
+        "C. 清新浅素极简风",
+        "D. 撞色潮流大胆"
+      ],
+      "correct": 1,
+      "explanation": "周制服饰遵循礼制，配色肃穆沉稳，多用于祭祀、朝会等正式礼仪场合。"
+    },
+    {
+      "id": 4,
+      "question": "周制玄端主要用于什么场合？",
+      "options": [
+        "A. 日常逛街出游",
+        "B. 祭祀、朝会正式礼仪",
+        "C. 宫廷宴乐歌舞",
+        "D. 文人书房闲居"
+      ],
+      "correct": 1,
+      "explanation": "玄端是周代最高等级的礼服之一，专用于祭祀、朝会等重大礼仪场合。"
+    },
+    {
+      "id": 5,
+      "question": "周制汉服主流剪裁特征是？",
+      "options": [
+        "A. 修身收腰、层次繁复",
+        "B. 袒露随性、飘逸宽松",
+        "C. 宽袍大袖、线条平直规整",
+        "D. 立领束腰、版型挺括"
+      ],
+      "correct": 2,
+      "explanation": "周制汉服为上下连属的深衣结构，剪裁平直规整，宽袍大袖，符合庄重的礼乐气质。"
+    }
+  ]
+}
